@@ -11,15 +11,15 @@ public class Figura {
 
     public void imprimeFiguraHorizontal(int numero) {
         imprimeArriba(numero);
-//        imprimeAbajo(numero);
+        imprimeAbajo(numero);
     }
 
     private void imprimeArriba(int maxNumero){
-        for (int i=1; i<= maxNumero; i++) {
+        for (int i=0; i<= maxNumero; i++) {
             int n = 0;
-            String cadena = "*";
-            while(n>=i) {
-                cadena.concat(simbolo);
+            String cadena = "";
+            while(n<i) {
+                cadena = cadena.concat("*");
                 n++;
             }
             System.out.println(cadena);
@@ -27,8 +27,14 @@ public class Figura {
     }
 
     private void imprimeAbajo(int maxNumero){
-        for (int i=maxNumero; i>0; i--) {
-            System.out.println("*");
+        for (int i=maxNumero-1; i>0; i--) {
+            int n = i;
+            String cadena = "";
+            while(n>0) {
+                cadena = cadena.concat("*");
+                n--;
+            }
+            System.out.println(cadena);
         }
     }
 
